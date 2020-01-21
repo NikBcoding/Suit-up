@@ -1,7 +1,8 @@
 import React from 'react';
 // import Suit from './Suit.svg';
-import Suit from '../src/Components/Suit/Suit';
+import Suit from './Components/Suit/Suit';
 import './App.css';
+
 // import { ReactSVG } from 'react-svg'
 
 function App() {
