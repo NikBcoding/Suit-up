@@ -6,20 +6,26 @@ import Shoes from './Shoes';
 import Tie from './Tie';
 import Shirt from './Shirt';
 import Handkerchief from './Handkerchief'
+import NavBar from '../NavBar/NavBar'
 
 export default function(props) {
 
-    return(
+  return(
+      <div>
         <div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235.66478 709.40164" width='80vw' height='80vh'>
-                <title>Suit</title>
-                <Shirt fill="pink" stroke="white" />
-                <Tie fill='black' stroke="grey" />
-                <Coat fill='grey' stroke="white" />
-                <Handkerchief fill='red' stroke="black" />
-                <Pants fill="grey" stroke="white"  />
-                <Shoes fill="black" stroke="grey" />
-            </svg>
+					<NavBar 
+						user={props.user}
+					/>
         </div>
-    )
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235.66478 709.40164" width='80vw' height='80vh'>
+            <title>Suit</title>
+              <Shirt fill="pink" stroke="white" />
+              <Tie fill='red' stroke="grey" />
+              <Coat fill='grey' stroke="white" />
+              <Handkerchief fill='red' stroke="black" />
+              <Pants fill="grey" stroke="white"  />
+              <Shoes fill="black" stroke="grey" />
+          </svg>
+      </div>
+  )
 }
