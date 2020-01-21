@@ -13,11 +13,11 @@ export default function(props) {
         <div>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235.66478 709.40164" width='80vw' height='80vh'>
                 <title>Suit</title>
-                <Shirt fill="lavendar" stroke="black" />
-                <Tie fill='purple' stroke="black" />
-                <Coat fill='lightgrey' stroke="black" />
-                <Handkerchief fill='purple' stroke="black" />
-                <Pants fill="lightgrey" stroke="grey"  />
+                <Shirt fill="pink" stroke="white" />
+                <Tie fill='black' stroke="grey" />
+                <Coat fill='grey' stroke="white" />
+                <Handkerchief fill='red' stroke="black" />
+                <Pants fill="grey" stroke="white"  />
                 <Shoes fill="black" stroke="grey" />
             </svg>
         </div>
