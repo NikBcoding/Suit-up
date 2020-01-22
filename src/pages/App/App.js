@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import { Route, Switch, /*Redirect*/} from 'react-router-dom';
 import Suit from '../../Components/Suit/Suit';
@@ -34,6 +36,7 @@ handleSignupOrLogin = () => {
 
     return (
       <div className='header'>
+        <ToastContainer></ToastContainer>
         <header className='header-footer'> SUITED & BOOTED</header>
         <Switch>
           <Route exact path='/' render={() =>

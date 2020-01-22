@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component, Children } from 'react';
+import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import './LoginPage.css';
 import userService from '../../utils/userService';
+import { delay } from 'q';
 
 class LoginPage extends Component {
   
@@ -26,7 +28,12 @@ class LoginPage extends Component {
       this.props.history.push('/');
     } catch (err) {
       // Invalid user data (probably duplicate email)
-      alert('Invalid Credentials!');
+      console.log(err)
+      console.log(toast)
+        toast('Invalid Credentials',{
+            draggable: true
+          });
+        
     }
   }
 
