@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
-// import Suit from './Suit.svg';
-import Suit from '../../Components/Suit/Suit';
 import './App.css';
+import { Route, Switch, /*Redirect*/} from 'react-router-dom';
+import Suit from '../../Components/Suit/Suit';
+import SignupPage from '../SignupPage/SignupPage';
+import LoginPage from '../LoginPage/LoginPage';
+
 import userService from '../../utils/userService';
 
 // import { ReactSVG } from 'react-svg'
@@ -23,23 +26,35 @@ handleLogout = () => {
   this.setState({user: null});
 }
 
+handleSignupOrLogin = () => {
+  this.setState({user: userService.getUser()});
+}
+
   render() {
 
     return (
       <div className='header'>
-        <div style={{display: 'flex', justifyContent: 'center'}}>
-          {/* <ReactSVG 
-            src={Suit}
-            beforeInjection={svg => {
-              svg.classList.add('Suit')
-              svg.setAttribute('style', 'width: 15vw', 'height: 15vh')
-            }}
-            /> */}
-          <Suit 
-            user={this.state.user}
-            handleLogout={this.handleLogout}
-          />
-        </div>
+        <header className='header-footer'> SUITED & BOOTED</header>
+        <Switch>
+          <Route exact path='/' render={() =>
+            <Suit 
+              user={this.state.user}
+              handleLogout={this.handleLogout}
+            />
+          }/>
+          <Route exact path='/signup' render={({ history }) => 
+            <SignupPage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          }/>
+          <Route exact path='/login' render={({ history }) => 
+            <LoginPage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          }/>
+        </Switch>
       </div>
     );
   }

@@ -18,6 +18,7 @@ export default function(props) {
 						handleLogout={props.handleLogout}
 					/>
         </div>
+				<div  style={{display: 'flex', justifyContent: 'center'}}>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235.66478 709.40164" width='80vw' height='80vh'>
             <title>Suit</title>
               <Shirt fill="pink" stroke="white" />
@@ -28,5 +29,6 @@ export default function(props) {
               <Shoes fill="black" stroke="grey" />
           </svg>
       </div>
+		</div>
   )
 }
