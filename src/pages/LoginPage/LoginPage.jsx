@@ -1,9 +1,8 @@
-import React, { Component, Children } from 'react';
+import React, { Component } from 'react';
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom';
 import './LoginPage.css';
 import userService from '../../utils/userService';
-import { delay } from 'q';
 
 class LoginPage extends Component {
   

@@ -21,8 +21,13 @@ class SignupForm extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
+    const payload = {
+      name: this.state.name,
+      email: this.state.email,
+      password: this.state.password
+    }
     try {
-      await userService.signup(this.state);
+      await userService.signup(payload);
       // Let <App> know a user has signed up!
       this.props.handleSignupOrLogin();
       // Successfully signed up - show GamePage

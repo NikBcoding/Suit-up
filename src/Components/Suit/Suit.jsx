@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './Suit.css';
 import Coat from './Coat';
 import Pants from './Pants';
@@ -7,8 +7,17 @@ import Tie from './Tie';
 import Shirt from './Shirt';
 import Handkerchief from './Handkerchief'
 import NavBar from '../NavBar/NavBar'
+import { SwatchesPicker } from 'react-color'
+
+
 
 export default function(props) {
+
+  const [color, setColor] = useState('#000000');
+
+  function handleColorSelect(color) {
+    setColor(color);
+  }
 
   return(
       <div>
@@ -18,8 +27,11 @@ export default function(props) {
 						handleLogout={props.handleLogout}
 					/>
         </div>
-				<div  style={{display: 'flex', justifyContent: 'center'}}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235.66478 709.40164" width='80vw' height='80vh'>
+				<div  className="suitGrid">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235.66478 709.40164" 
+          height='100%'
+          className="suit"
+          >
             <title>Suit</title>
               <Shirt fill="pink" stroke="white" />
               <Tie fill='red' stroke="grey" />
@@ -28,6 +40,14 @@ export default function(props) {
               <Pants fill="grey" stroke="white"  />
               <Shoes fill="black" stroke="grey" />
           </svg>
+          <div className="swatchesCell">
+            <SwatchesPicker 
+            height={'100%'} 
+            width={'90%'} 
+            color={color}
+            onChangeComplete={ handleColorSelect }
+            />
+          </div>
       </div>
 		</div>
   )

@@ -33,3 +33,25 @@
   .cls-6 {
     stroke-width: 0.5px;
   }
+
+
+.suitGrid {
+  display: grid;
+  height: 75vh;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.suit {
+  display: flex;
+  grid-column: 2 / 3;
+  justify-content: center;
+  width: 100%;
+}
+
+.swatchesCell {
+  grid-column: 3 / 4;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+}

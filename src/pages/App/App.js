@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import { ToastContainer,toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
-import { Route, Switch, /*Redirect*/} from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 import Suit from '../../Components/Suit/Suit';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
-
 import userService from '../../utils/userService';
-
-// import { ReactSVG } from 'react-svg'
+// import { SwatchesPicker } from 'react-color'
 
 class App extends Component {
     constructor() {
@@ -25,12 +23,13 @@ class App extends Component {
 
 handleLogout = () => {
   userService.logout();
-  this.setState({user: null});
+  this.setState({ user: null });
 }
 
 handleSignupOrLogin = () => {
   this.setState({user: userService.getUser()});
 }
+
 
   render() {
 
@@ -58,6 +57,7 @@ handleSignupOrLogin = () => {
             />
           }/>
         </Switch>
+
       </div>
     );
   }
