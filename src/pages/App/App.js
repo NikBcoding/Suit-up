@@ -16,6 +16,13 @@ class App extends Component {
     }
 
 
+/*--- Callback Methods ---*/
+
+handleLogout = () => {
+  userService.logout();
+  this.setState({user: null});
+}
+
   render() {
 
     return (
@@ -28,7 +35,10 @@ class App extends Component {
               svg.setAttribute('style', 'width: 15vw', 'height: 15vh')
             }}
             /> */}
-          <Suit />
+          <Suit 
+            user={this.state.user}
+            handleLogout={this.handleLogout}
+          />
         </div>
       </div>
     );

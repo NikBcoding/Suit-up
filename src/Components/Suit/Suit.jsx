@@ -15,6 +15,7 @@ export default function(props) {
         <div>
 					<NavBar 
 						user={props.user}
+						handleLogout={props.handleLogout}
 					/>
         </div>
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235.66478 709.40164" width='80vw' height='80vh'>
