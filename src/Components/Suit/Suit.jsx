@@ -8,7 +8,7 @@ import Shirt from './Shirt';
 import Handkerchief from './Handkerchief'
 import NavBar from '../NavBar/NavBar'
 import { SwatchesPicker } from 'react-color'
-
+import { create } from 'domain';
 
 
 export default function(props) {
@@ -19,8 +19,7 @@ export default function(props) {
   const [shirtColor, setShirtColor] = useState('#FFFFFF');
   const [handkerchiefColor, setHandkerchiefColor] = useState('#FFFFFF');
   const [color, setColor] = useState('#FFFFFF');
-  const [selItem, setSelected] = useState('')
- 
+  const [selItem, setSelected] = useState('');
 
   function  handleCoatClick (){
     // if color was selected on something else, set the selected color to whatever color the coat currently is.
@@ -83,13 +82,39 @@ function handleClick(color){
   }
 }
 
+function refreshSuit(){
+  console.log('refresh hit')
+  setCoatColor('#FFFFFF')
+  setPantsColor('#FFFFFF')
+  setShirtColor('#FFFFFF')
+  setTieColor('#FFFFFF')
+  setShoesColor('#FFFFFF')
+  setHandkerchiefColor('#FFFFFF')
+}
+
+
+
+function saveSuit(){
+  const createdSuit={
+    Coat: coatColor,
+    Pants: pantsColor,
+    Shirt: shirtColor,
+    Tie: tieColor,
+    Shoes: shoesColor,
+    Handkerchief: handkerchiefColor
+  }
+  props.handleSaveSuit(createdSuit)
+}
+
 
   return(
       <div>
         <div>
 					<NavBar 
 						user={props.user}
-						handleLogout={props.handleLogout}
+            handleLogout={props.handleLogout}
+            refreshSuit={refreshSuit}
+            saveSuit={saveSuit}
 					/>
         </div>
 				<div  className="suitGrid">

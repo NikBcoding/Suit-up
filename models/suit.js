@@ -2,17 +2,32 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const suitSchema = new Schema({
-  initials: String,
-  numGuesses: Number,
-  seconds: Number
+  coat: {
+    type: String
+  },
+  pants: {
+    type: String
+  },
+  shirt: {
+    type: String
+  },
+  tie: {
+    type: String
+  },
+  shoes: {
+    type: String
+  },
+  handkerchief: {
+    type: String
+  },
+  user: {
+    type: Schema.type.ObjectId,
+    ref: 'User'
+  }
+  
 }, {
   timestamps: true
 });
 
-// Ensure that initials are uppercase & not longer than 3 characters
-suitSchema.pre('save', function(next) {
-  this.initials = this.initials.substr(0, 3).toUpperCase();
-  next();
-});
 
 module.exports = mongoose.model('Suit', suitSchema);

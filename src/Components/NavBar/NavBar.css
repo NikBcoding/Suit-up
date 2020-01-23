@@ -6,8 +6,20 @@
   
   .NavBar-link {
     margin: 0 10px;
+    color: lightslategrey;
   }
   
   .NavBar-welcome {
-    color: grey;
+    color: maroon;
+  }
+
+  .save{
+    text-align: center;
+    margin-top: 5px;
+    margin-left: 67%;
+  }
+
+  button:hover{
+    color: red;
+    cursor: pointer;
   }

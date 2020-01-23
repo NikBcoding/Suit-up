@@ -14,6 +14,7 @@ class App extends Component {
       super();
       this.state = {
         user: userService.getUser(),
+        savedSuits: [], //becaused saved suits is going to be manipulated on the suits page and also used on the fav suits page, we need this state on the app component, so it can be used/manipulated on multiple pages.
       };
     }
 
@@ -27,6 +28,15 @@ handleLogout = () => {
 
 handleSignupOrLogin = () => {
   this.setState({user: userService.getUser()});
+}
+
+handleSaveSuit = (suit) => {
+  this.setState( (prevState) =>  {
+    return {
+      //...array is an array spread operator, it just repasses in all the array elements of an array into another array. We have to do this because setState won't just add a new array element, it will overwrite the entire array with the new array. So first, we have to copy the old array into this new array.
+      savedSuits: [...prevState.savedSuits, suit]
+    }
+  })
 }
 
 
@@ -43,12 +53,7 @@ handleSignupOrLogin = () => {
             <Suit 
               user={this.state.user}
               handleLogout={this.handleLogout}
-              // handleCoatClick={this.handleCoatClick}
-              // handlePantsClick={this.handlePantsClick}
-              // handleShirtClick={this.handleShirtClick}
-              // handleTieClick={this.handleTieClick}
-              // handleShoesClick={this.handleShoesClick}
-              // handleHandkerchiefClick={this.handleHandkerchiefClick}
+              handleSaveSuit={this.handleSaveSuit}
             />
           }/>
           <Route exact path='/signup' render={({ history }) => 
@@ -67,7 +72,7 @@ handleSignupOrLogin = () => {
             userService.getUser() ?
               <FavSuitsPage
                 scores={this.state.scores}
-                handleUpdateSuit={this.handleUpdateSuit}
+                savedSuits={this.state.savedSuits}
               />
               :
               <Redirect to='/login' />

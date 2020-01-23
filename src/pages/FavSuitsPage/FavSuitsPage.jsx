@@ -2,43 +2,41 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './FavSuitsPage.css';
 import suitsService from '../../utils/suitsService';
+import Shirt from '../../Components/Suit/Shirt';
+import Tie from '../../Components/Suit/Tie';
+import Coat from '../../Components/Suit/Coat';
+import Handkerchief from '../../Components/Suit/Handkerchief';
+import Pants from '../../Components/Suit/Pants';
+import Shoes from '../../Components/Suit/Shoes';
 
-class FavSuitsPage extends Component {
 
-  async componentDidMount() {
-    const suits = await suitsService.index();
-    this.props.handleUpdateSuits(suits);
-  }
-
-  render() {
-    const suitRows = ((suit, idx) => (
-      <tr key={idx}>
-        <td>{suit}</td>
-      </tr>
-    ));
-  
-    return (
-      <div className={styles.FavSuit}>
-        <header className='header-footer'>Fav-Suits</header>
-        {this.props.suits ? 
-          <table className={`${styles.table} table text-info`}>
-            <thead>
-        <tr><th width={80}>#</th><th width={100}>Nice!</th><th width={100}>Guesses</th><th>Seconds</th></tr>
-            </thead>
-            <tbody>
-              {suitRows}
-            </tbody>
-          </table>
-          :
-          <h4 className='text-info'>No Favorite Suits Yet</h4>
-        }
-        <div>
-          <Link className={`${styles.cancel} btn btn-default btn-sm`} to='/'>Back to Create</Link>
-        </div>
-      </div>
-    );
-  }
-
+export default class FavSuitsPage extends Component {
+constructor(props){
+  super(props);
 }
 
-export default FavSuitsPage;
+  render() {
+  // console.log(this.props.location.state.createdSuits)
+  
+    return (
+      <div className='nice'>
+          {this.props.savedSuits && this.props.savedSuits.map((suit,idx) => (
+         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235.66478 709.40164" 
+          height='100%'
+          className="suit"
+          key={idx}
+          >
+            <title>Suit</title>
+              <Shirt fill={suit.Shirt} stroke="grey" />
+              <Tie  fill={suit.Tie} stroke="grey" />
+              <Coat fill={suit.Coat} stroke="grey" />
+              <Handkerchief fill={suit.Handkerchief} stroke="grey" />
+              <Pants fill={suit.Pants} stroke="grey"  />
+              <Shoes fill={suit.Shoes} stroke="grey" />
+            
+          </svg>
+          ))}
+      </div>
+     )
+}
+}

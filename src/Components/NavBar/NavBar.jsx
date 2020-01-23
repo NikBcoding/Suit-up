@@ -2,14 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 
+
 const NavBar = (props) => {
   let nav = props.user ?
     <div>
-      <Link to='/fav-suits' className='NavBar-link'>FAV SUITS</Link>
+      <Link to= '/fav-suits' className='NavBar-link'>FAV SUITS</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <Link to='' className='NavBar-link' onClick={props.handleLogout}>LOG OUT</Link>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <span className='NavBar-welcome'>WELCOME, {props.user.name}</span>
+      <footer className='save'><button onClick={() => props.saveSuit()}>SAVE</button> <button onClick={props.refreshSuit}>REFRESH</button></footer>
     </div>
     :
     <div>
