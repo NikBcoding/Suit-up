@@ -8,19 +8,12 @@ import FavSuitsPage from '../FavSuitsPage/FavSuitsPage'
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import userService from '../../utils/userService';
-import Pants from '../../Components/Suit/Pants';
-import Shirt from '../../Components/Suit/Shirt';
-import Tie from '../../Components/Suit/Tie';
-import Shoes from '../../Components/Suit/Shoes';
-import Handkerchief from '../../Components/Suit/Handkerchief';
-import Coat from '../../Components/Suit/Coat';
 
 class App extends Component {
     constructor() {
       super();
       this.state = {
         user: userService.getUser(),
-        selItem: ''
       };
     }
 
@@ -36,42 +29,7 @@ handleSignupOrLogin = () => {
   this.setState({user: userService.getUser()});
 }
 
-handleCoatClick = () => {
-  this.setState({selItem: Coat})
 
-  console.log("HIT Coat")
-
-}
-
-handlePantsClick = () => {
-  this.setState({selItem: Pants})
-
-  console.log("HIT Pants")
-}
-
-handleShirtClick = () => {
-  this.setState({selItem: Shirt})
-
-  console.log('HIT shirt')
-}
-
-handleTieClick = () => {
-  this.setState({selItem: Tie})
-
-  console.log("HIT Tie")
-}
-
-handleShoesClick = () => {
-  this.setState({selItem: Shoes})
-
-  console.log("HIT Shoes")
-}
-
-handleHandkerchiefClick = () => {
-  this.setState({selItem: Handkerchief})
-
-  console.log("HIT Handker")
-}
 
 
   render() {
@@ -85,12 +43,12 @@ handleHandkerchiefClick = () => {
             <Suit 
               user={this.state.user}
               handleLogout={this.handleLogout}
-              handleCoatClick={this.handleCoatClick}
-              handlePantsClick={this.handlePantsClick}
-              handleShirtClick={this.handleShirtClick}
-              handleTieClick={this.handleTieClick}
-              handleShoesClick={this.handleShoesClick}
-              handleHandkerchiefClick={this.handleHandkerchiefClick}
+              // handleCoatClick={this.handleCoatClick}
+              // handlePantsClick={this.handlePantsClick}
+              // handleShirtClick={this.handleShirtClick}
+              // handleTieClick={this.handleTieClick}
+              // handleShoesClick={this.handleShoesClick}
+              // handleHandkerchiefClick={this.handleHandkerchiefClick}
             />
           }/>
           <Route exact path='/signup' render={({ history }) => 

@@ -12,14 +12,76 @@ import { SwatchesPicker } from 'react-color'
 
 
 export default function(props) {
-
+  const [coatColor, setCoatColor] = useState('#FFFFFF');
+  const [tieColor, setTieColor] = useState('#FFFFFF');
+  const [pantsColor, setPantsColor] = useState('#FFFFFF');
+  const [shoesColor, setShoesColor] = useState('#FFFFFF');
+  const [shirtColor, setShirtColor] = useState('#FFFFFF');
+  const [handkerchiefColor, setHandkerchiefColor] = useState('#FFFFFF');
   const [color, setColor] = useState('#FFFFFF');
+  const [selItem, setSelected] = useState('')
+ 
 
-  function handleColorSelect(color) {
-    setColor(color.hex);
-    console.log(color.hex)
+  function  handleCoatClick (){
+    // if color was selected on something else, set the selected color to whatever color the coat currently is.
+    if (color !== coatColor) setColor(coatColor);
+    setSelected('coat');
+  
+  }
+  
+  function handlePantsClick () {
+    if (color !== pantsColor) setColor(pantsColor);
+    setSelected('pants');
+  }
+  
+  function handleShirtClick(){
+    if (color !== shirtColor) setColor(shirtColor);
+    setSelected('shirt');
+  }
+  
+  function handleTieClick(){
+    if (color !== tieColor) setColor(tieColor);
+    setSelected('tie');
+  }
+  
+ function handleShoesClick(){
+  if (color !== shoesColor) setColor(shoesColor);
+  setSelected('shoes');
+  }
+  
+ function handleHandkerchiefClick() {
+  if (color !== handkerchiefColor) setColor(handkerchiefColor);
+  setSelected('handkerchief');
   }
 
+  //<SwatchesPicker>'s onChange property accepts a function as a parameter that is triggered whenever we click on a color. It inputs in the selected color on the swatch as the argument into the function. The color argument has a property of .hex which contains the hex string of the color. 
+function handleClick(color){
+  //Since <SwatchesPicker> shows a checkmark based on the selected color, and since we are passing our 'color' state as the property for the selected color for swatchespicker, update the state, so that swatchespicker places its checkmark on the color we just clicked on.
+  setColor(color.hex)
+  //based on what article of clohing was selected in the functions above, change the color of that article.
+  switch (selItem) {
+    case 'coat':
+      setCoatColor(color.hex)
+      return;
+    case 'pants':
+      setPantsColor(color.hex);
+      return;
+    case 'shirt':
+      setShirtColor(color.hex);
+      return;
+    case 'tie':
+      setTieColor(color.hex);
+      return;
+    case 'shoes':
+      setShoesColor(color.hex);
+      return;
+    case 'handkerchief':
+      setHandkerchiefColor(color.hex);
+      return;
+    default: 
+      return;
+  }
+}
 
 
   return(
@@ -36,19 +98,19 @@ export default function(props) {
           className="suit"
           >
             <title>Suit</title>
-              <Shirt handleShirtClick={props.handleShirtClick} fill={color} stroke="grey" />
-              <Tie handleTieClick={props.handleTieClick} fill={color} stroke="grey" />
-              <Coat handleCoatClick={props.handleCoatClick} fill={color} stroke="grey" />
-              <Handkerchief handleHandkerchiefClick={props.handleHandkerchiefClick} fill={color} stroke="grey" />
-              <Pants handlePantsClick={props.handlePantsClick} fill={color} stroke="grey"  />
-              <Shoes handleShoesClick={props.handleShoesClick} fill={color} stroke="grey" />
+              <Shirt handleShirtClick={handleShirtClick} fill={shirtColor} stroke="grey" />
+              <Tie handleTieClick={handleTieClick} fill={tieColor} stroke="grey" />
+              <Coat handleCoatClick={handleCoatClick} fill={coatColor} stroke="grey" />
+              <Handkerchief handleHandkerchiefClick={handleHandkerchiefClick} fill={handkerchiefColor} stroke="grey" />
+              <Pants handlePantsClick={handlePantsClick} fill={pantsColor} stroke="grey"  />
+              <Shoes handleShoesClick={handleShoesClick} fill={shoesColor} stroke="grey" />
           </svg>
           <div className="swatchesCell">
             <SwatchesPicker 
             height={'100%'} 
             width={'90%'} 
-            color={color}
-            onChange={ handleColorSelect }
+            color={ color }
+            onChange={ handleClick }
   
             />
           </div>

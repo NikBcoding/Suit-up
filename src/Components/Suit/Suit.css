@@ -55,3 +55,27 @@
   width: 100%;
   height: 100%;
 }
+
+#coat:hover .coat {
+  stroke-width: 4px;
+}
+
+#handkerchief:hover .handkerchief {
+  stroke-width: 4px;
+}
+
+#pants:hover .pants {
+  stroke-width: 4px;
+}
+
+#shirt:hover .shirt {
+  stroke-width: 4px;
+}
+
+#shoes:hover .shoes {
+  stroke-width: 4px;
+}
+
+#tie:hover .tie {
+  stroke-width: 4px;
+}
