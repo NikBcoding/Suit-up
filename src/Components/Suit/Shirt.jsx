@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function(props) {
     return(
-    <g id="shirt">
+    <g onClick={props.handleShirtClick} id="shirt">
     <g id="Layer_8" data-name="Layer 8">
       <path className="cls-1" style={{fill: props.fill, stroke: props.stroke}} d="M186.29973,311.67261s-.07107,11.36112.56857,12.60225,18.976,7.44677,29.13924,0a72.10431,72.10431,0,0,0,.28428-11.93391C211.8854,316.4462,191.32527,316.74195,186.29973,311.67261Z" transform="translate(-183.22978 -32.22077)"/>
       <path className="cls-1" style={{fill: props.fill, stroke: props.stroke}} d="M417.00635,324.93007q.23144-.163.45735-.33479a69.61458,69.61458,0,0,0,.07541-11.73c-4.33338,4.16874-24.88265,5.097-29.99551.27389,0,0,.12773,11.16077.78892,12.35993.65125,1.18115,18.5514,6.56043,28.67383-.56907" transform="translate(-183.22978 -32.22077)"/>

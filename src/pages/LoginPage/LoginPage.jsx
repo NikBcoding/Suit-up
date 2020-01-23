@@ -27,8 +27,6 @@ class LoginPage extends Component {
       this.props.history.push('/');
     } catch (err) {
       // Invalid user data (probably duplicate email)
-      console.log(err)
-      console.log(toast)
         toast('Invalid Credentials',{
             draggable: true
           });

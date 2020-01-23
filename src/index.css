@@ -13,10 +13,14 @@ code {
 }
 
 .header-footer {
+  background-color: lightgoldenrodyellow;
   height: 30px;
   padding: 5px;
   margin: 3px 0;
-  color: grey;
+  color: rgb(43, 41, 41);
   font-size: 18px;
   text-align: center;
 }
+
+
+
