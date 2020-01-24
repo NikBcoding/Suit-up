@@ -1,68 +1,27 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#Suited & Booted
 
-## Available Scripts
+ABOUT
 
-In the project directory, you can run:
+*Suited and Booted is a simple and fun app that can help users either pick out an outfit to wear, or give them ideas of what they might want to buy.
 
-### `npm start`
+*Users will be able to select any type of outfit style(EX: business, casual, beach...) and from each outfit style, users will be able to select and change colors to each individual type of clothing. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+*This can help users get an idea of what outfit they would like to wear before going though their entire closet looking for an outfit to wear.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+*This can also give the user an easier time to pick out an outfit they would want to buy, by simply seeing what colors go well with each other.
 
-### `npm test`
+*Users don't need to be signed up, in order to play around with outfits and the color picker.  
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+*Only if users decide to save their created outfits for future reference they will be required to be signed up / logged in.
 
-### `npm run build`
+TECHNOLOGIES
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+	REACT
+	JavaScript
+	MongoDB
+	CSS
+		
+	
+FUTURE GOALS
+	
+	My future goals for this app is to include more outfit styles, more colors, add different background settings so that users can have an idea of what they might look like at a specific location.  I would want to make it more user friendly and style it up as I move forward with it.
