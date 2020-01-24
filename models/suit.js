@@ -21,8 +21,7 @@ const suitSchema = new Schema({
     type: String
   },
   user: {
-    type: Schema.type.ObjectId,
-    ref: 'User'
+    // userEmail: userEmail
   }
   
 }, {

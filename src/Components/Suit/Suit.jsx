@@ -8,7 +8,6 @@ import Shirt from './Shirt';
 import Handkerchief from './Handkerchief'
 import NavBar from '../NavBar/NavBar'
 import { SwatchesPicker } from 'react-color'
-import { create } from 'domain';
 
 
 export default function(props) {
@@ -82,8 +81,7 @@ function handleClick(color){
   }
 }
 
-function refreshSuit(){
-  console.log('refresh hit')
+function refreshSuit() {
   setCoatColor('#FFFFFF')
   setPantsColor('#FFFFFF')
   setShirtColor('#FFFFFF')

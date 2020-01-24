@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './FavSuitsPage.css';
-import suitsService from '../../utils/suitsService';
+import './FavSuitsPage.css';
+// import suitsService from '../../utils/suitsService';
 import Shirt from '../../Components/Suit/Shirt';
 import Tie from '../../Components/Suit/Tie';
 import Coat from '../../Components/Suit/Coat';
@@ -16,7 +16,6 @@ constructor(props){
 }
 
   render() {
-  // console.log(this.props.location.state.createdSuits)
   
     return (
       <div className='nice'>
@@ -27,16 +26,19 @@ constructor(props){
           key={idx}
           >
             <title>Suit</title>
-              <Shirt fill={suit.Shirt} stroke="grey" />
-              <Tie  fill={suit.Tie} stroke="grey" />
-              <Coat fill={suit.Coat} stroke="grey" />
-              <Handkerchief fill={suit.Handkerchief} stroke="grey" />
-              <Pants fill={suit.Pants} stroke="grey"  />
-              <Shoes fill={suit.Shoes} stroke="grey" />
+              <Shirt className='savedSuit' fill={suit.Shirt} stroke="grey" />
+              <Tie className='savedSuit' fill={suit.Tie} stroke="grey" />
+              <Coat className='savedSuit' fill={suit.Coat} stroke="grey" />
+              <Handkerchief className='savedSuit' fill={suit.Handkerchief} stroke="grey" />
+              <Pants className='savedSuit' fill={suit.Pants} stroke="grey"  />
+              <Shoes className='savedSuit' fill={suit.Shoes} stroke="grey" />
             
           </svg>
           ))}
+          <div className='CMBtn'>
+            <Link to = '/'><button>Create More</button></Link>
+          </div>
       </div>
      )
-}
+  }
 }
